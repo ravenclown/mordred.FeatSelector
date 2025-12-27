@@ -20,8 +20,7 @@ You can install the development version of **mordred.FeatSelector** from [GitHub
 install.packages("devtools")
 
 # Install mordred.FeatSelector
-# Replace 'your-username' with your actual GitHub handle
-devtools::install_github("your-username/mordred.FeatSelector")
+devtools::install_github("ravenclown/mordred.FeatSelector")
 ```
 Dependencies
 
