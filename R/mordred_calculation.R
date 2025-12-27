@@ -115,3 +115,4 @@ pca_analysis <- function(clean_df) {
 visualize <- function(pc_file, pccomp) {
   # Get PCA variable results
   var <- factoextra
+}
