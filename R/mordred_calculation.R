@@ -64,14 +64,14 @@ drop_zero_var <- function(df, cutPercentage) {
 #' @param df A data frame of numeric features.
 #' @param cutoff Correlation coefficient cutoff (e.g., 0.9).
 #' @return A standardized data frame with redundant features removed.
-#' @importFrom stats cor scale
+#' @importFrom stats cor
 #' @importFrom caret findCorrelation
 #' @export
 standartize_correlate <- function(df, cutoff) {
-  # Center and scale the data
-  scaled_file <- data.frame(scale(df))
+  # Center and scale the data using the base scale function
+  scaled_file <- data.frame(base::scale(df))
 
-  # Calculate correlation matrix
+  # Calculate correlation matrix using stats package
   cor_matrix <- stats::cor(scaled_file)
 
   # Find indices of features to drop based on cutoff
@@ -114,5 +114,11 @@ pca_analysis <- function(clean_df) {
 #' @export
 visualize <- function(pc_file, pccomp) {
   # Get PCA variable results
-  var <- factoextra
+  var <- factoextra::get_pca_var(pc_file)
+
+  # Plot variables (Correlation circle)
+  print(factoextra::fviz_pca_var(pc_file, col.var = "black"))
+
+  # Plot Cos2 (Quality of representation) for top 10 variables
+  print(factoextra::fviz_cos2(pc_file, choice = "var", axes = 1:pccomp, top = 10))
 }
