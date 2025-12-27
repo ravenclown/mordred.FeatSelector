@@ -1,0 +1,15 @@
+Package: mordred.FeatSelector
+Type: Package
+Title: Feature Selection for Mordred Descriptors
+Version: 0.1.0
+Author: Your Name
+Description: A package to clean, standardize, and analyze Mordred molecular descriptors.
+Imports: 
+    caret,
+    tidyverse,
+    moments,
+    factoextra
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
